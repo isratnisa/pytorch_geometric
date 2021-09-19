@@ -41,7 +41,7 @@ class Entities(InMemoryDataset):
                  transform: Optional[Callable] = None,
                  pre_transform: Optional[Callable] = None):
         self.name = name.lower()
-        self.hetero = hetero
+        self.hetero = True
         assert self.name in ['aifb', 'am', 'mutag', 'bgs']
         super().__init__(root, transform, pre_transform)
         self.data, self.slices = torch.load(self.processed_paths[0])
